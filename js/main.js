@@ -1,14 +1,10 @@
 const btn = $('#button');
 
 $(window).scroll(function() {
-  if ($(window).scrollTop() > 100) {
-    btn.addClass('show');
-  } else {
-    btn.removeClass('show');
-  }
+  btn.toggleClass('show', $(window).scrollTop() > 100);
 });
 
 btn.on('click', function(e) {
   e.preventDefault();
-  $('html, body').animate({scrollTop:0}, '100');
+  $('html, body').animate({scrollTop: 0}, 100);
 });
